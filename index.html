@@ -19,16 +19,13 @@
     <!-- ---------- -->
     <!-- Encabezado -->
     <!-- ---------- -->
-
     <div class="jumbotron mb-0">
       <h1 class="display-4">Gestion de bocaterías v2.0</h1>
       <p class="lead">App web de gestión de bocaterías</p>
     </div>
-
     <!-- ------ -->
     <!-- Navbar -->
     <!-- ------ -->
-
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light pt-0 mt-0 mb-2 pb-2"
     >
@@ -45,25 +42,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <!-- ------- -->
-          <!-- Pedidos -->
-          <!-- ------- -->
+          <!-- ------------ -->
+          <!-- Ingredientes -->
+          <!-- ------------ -->
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               type="button"
-              id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Pedidos
+              Ingredientes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" type="button">Añadir</a>
+              <a class="dropdown-item" type="button" id="insertIngrediente"
+                >Añadir</a
+              >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" type="button" id="sacaListadoPedido"
+              <a class="dropdown-item" type="button" id="listaIngredientes"
                 >Listado</a
               >
             </div>
@@ -75,7 +73,6 @@
             <a
               class="nav-link dropdown-toggle"
               type="button"
-              id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -84,43 +81,35 @@
               Bocadillos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                type="button"
-                id="navAddBocadillo"
-                onclick='mostrar("#formAddBocadillo")'
+              <a class="dropdown-item" type="button" id="insertBocadillo"
                 >Añadir</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" type="button" id="mostrarListaBocadillos"
+              <a class="dropdown-item" type="button" id="listaBocadillos"
                 >Listado</a
               >
             </div>
           </li>
-          <!-- ------------ -->
-          <!-- Ingredientes -->
-          <!-- ------------ -->
+          <!-- ------- -->
+          <!-- Pedidos -->
+          <!-- ------- -->
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               type="button"
-              id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Ingredientes
+              Pedidos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                type="button"
-                onclick='mostrar("#formAddIngrediente")'
+              <a class="dropdown-item" type="button" id="insertPedido"
                 >Añadir</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" type="button" id="mostarListaIngred"
+              <a class="dropdown-item" type="button" id="listaPedidos"
                 >Listado</a
               >
             </div>
@@ -128,12 +117,10 @@
           <!-- -------- -->
           <!-- Clientes -->
           <!-- -------- -->
-
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               type="button"
-              id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -142,41 +129,11 @@
               Clientes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" type="button">Añadir</a>
-              <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item"
-                type="button"
-                id="sacarLaLista"
-                onclick='mostrar("#formAddCliente")'
-                >Listado</a
-              >
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              type="button"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Estalecimientos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                type="button"
-                onclick='mostrar("#formAddEstablecimiento")'
+              <a class="dropdown-item" type="button" id="insertCliente"
                 >Añadir</a
               >
               <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item"
-                type="button"
-                id="sacaListaEstablecimiento"
+              <a class="dropdown-item" type="button" id="listaClientes"
                 >Listado</a
               >
             </div>
@@ -184,14 +141,11 @@
         </ul>
       </div>
     </nav>
-
     <!-- ----------------------------------------------- -->
     <!-- Div al que se le van a adherir los formularios o-->
     <!-- listados -------------------------------------- -->
     <!-- ----------------------------------------------- -->
-
     <div id="contenido" class="col-12"></div>
-
     <script
       src="frameworks/jQuery/jquery-3.4.1.min.js"
       crossorigin="anonymous"
@@ -210,7 +164,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="js/objetos.js"></script>
-    <script src="js/principal.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
