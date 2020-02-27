@@ -5,7 +5,7 @@ if (!$("#listBocadillos").is(":empty")) {
 obtenerIngredientes();
 
 function obtenerIngredientes() {
-  $.get("./php/listaBocadillos.php", crearTablaBocadillos, "json");
+  $.get("./php/listBocadillos.php", crearTablaBocadillos, "json");
 }
 
 function crearTablaBocadillos(json) {
@@ -13,7 +13,6 @@ function crearTablaBocadillos(json) {
 }
 
 function borrarBocadillo(id) {
-  console.log(param);
   param = "id=" + id;
   $.post("./php/delBocadillo.php", param, respuestaDelBocadillo, "json");
 }

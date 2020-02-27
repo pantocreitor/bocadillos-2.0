@@ -10,9 +10,9 @@ $sql = "DELETE FROM bocadillos WHERE id=" . $id;
 $resultado = mysqli_query($conexion, $sql);
 if ($resultado) {
      $respuesta["error"] = 0;
-     $respuesta["mensaje"] = "Alta realizada";
+     $respuesta["mensaje"] = "Bocadillo eliminado";
 } else {
      $respuesta["error"] = 1;
-     $respuesta["mensaje"] = "Error en el proceso de alta: " . mysqli_error($conexion);
+     $respuesta["mensaje"] = "Error " . mysqli_error($conexion);
 }
 echo json_encode($respuesta);

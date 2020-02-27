@@ -3,16 +3,14 @@ $servidor = "localhost";
 $basedatos = "bocadillos";
 $usuario = "root";
 $password = "";
-$nombre = $_POST['nombre'];
-$ingrediente = $_POST['ingrediente'];
-$precio = $_POST['precio'];
+$dni = $_POST['dni'];
 $conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
-$sql = "INSERT INTO bocadillos(nombre, precio, idIngrediente) VALUES ('$nombre',$precio,$ingrediente)";
+$sql = "DELETE FROM cliente WHERE dni='" . $dni . "'";
 $resultado = mysqli_query($conexion, $sql);
 if ($resultado) {
      $respuesta["error"] = 0;
-     $respuesta["mensaje"] = "Bocadillo añadido";
+     $respuesta["mensaje"] = "Cliente eliminado";
 } else {
      $respuesta["error"] = 1;
      $respuesta["mensaje"] = "Error " . mysqli_error($conexion);
