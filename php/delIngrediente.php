@@ -3,14 +3,14 @@ $servidor = "localhost";
 $basedatos = "bocadillos";
 $usuario = "root";
 $password = "";
-$nombre = $_POST['nombre'];
+$id = $_POST['id'];
 $conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
-$sql = "INSERT INTO ingredientes (nombre) VALUES ('" . $nombre . "')";
+$sql = "DELETE FROM ingredientes WHERE id='" . $id . "'";
 $resultado = mysqli_query($conexion, $sql);
 if ($resultado) {
      $respuesta["error"] = 0;
-     $respuesta["mensaje"] = "Ingrediente añadido";
+     $respuesta["mensaje"] = "Ingrediente eliminado";
 } else {
      $respuesta["error"] = 1;
      $respuesta["mensaje"] = "Error " . mysqli_error($conexion);

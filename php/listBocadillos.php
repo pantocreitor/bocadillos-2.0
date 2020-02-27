@@ -5,15 +5,15 @@ $usuario   = "root";
 $password  = "";
 $conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
-$tabla = '<table class="table">
-  <thead>
+$tabla = '<table class="table table-borderless table-striped">
+  <thead class="thead-light">
     <tr>
-      <td>ID</td>
-      <td>Nombre</td>
-      <td>Precio</td>
-      <td>Borrar</td>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Borrar</th>
     </tr>
-  </tdead>
+  </thead>
   <tbody>';
 $sql = "SELECT id, nombre, precio FROM bocadillos ORDER BY id";
 $resultados = mysqli_query($conexion, $sql);

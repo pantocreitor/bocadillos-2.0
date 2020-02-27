@@ -1,45 +1,39 @@
-<div
-  id="frmInsertPedido" class="col-8 m-auto divHijo pt-4"
->
-  <form>
-    </div>
+<div id="frmInsertPedido" class="col-8 m-auto divHijo pt-4">
+  <form id="frmInsertPedidoFrm">
     <div class="form-group row">
       <label for="frmPedidoDirecc" class="col-4 col-form-label"
         >Dirección:</label
       >
       <div class="col-8">
-        <input
-          id="frmInsertPedidoDireccion"
-          type="text"
-          class="form-control"
-        />
+        <input id="frmInsertPedidoDireccion" type="text" class="form-control" />
       </div>
     </div>
     <div class="form-group row">
       <label for="frmPedidoBocadillo" class="col-4 col-form-label"
-        >Bocadillos:</label
+        >Bocadillo:</label
       >
-      <!-- Checkboxes de bocadillos -->
-      <div class="col-8" id="frmInsertPedidoBocadillos"></div>
+      <select class="col-8" id="frmInsertPedidoBocadillos"></select>
     </div>
     <div class="form-group row">
       <label for="frmPedidoCliente" class="col-4 col-form-label">Cliente</label>
-      <!-- Desplegable de clientes -->
-      <div class="col-8" id="frmInsertPedidoCliente"></div>
+      <select class="col-8" id="frmInsertPedidoCliente"></select>
     </div>
     <div class="form-group row">
-      <label for="frmInsertPedidoFecha" class="col-4 col-form-label">Fecha:</label>
+      <label for="frmInsertPedidoFecha" class="col-4 col-form-label"
+        >Fecha:</label
+      >
       <div class="col-8">
-        <input
-          id="frmInsertPedidoFecha"
-          type="text"
-        />
+        <input id="frmInsertPedidoFecha" type="text" />
       </div>
     </div>
 
     <div class="form-group row">
       <div class="offset-4 col-8">
-        <button type="button" id="frmInsertPedidoAceptar" class="btn btn-primary">
+        <button
+          type="button"
+          id="frmInsertPedidoAceptar"
+          class="btn btn-primary"
+        >
           Añadir
         </button>
       </div>
@@ -50,4 +44,4 @@
   $(function() {
     $("#frmInsertPedidoFecha").datepicker();
   });
-  </script>
+</script>
