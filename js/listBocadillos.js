@@ -23,6 +23,6 @@ function respuestaDelBocadillo(json) {
     alert(json.mensaje);
   } else {
     alert(json.mensaje);
-    $("#listBocadillos").hide("normal");
+    location.reload((forceGet = true));
   }
 }

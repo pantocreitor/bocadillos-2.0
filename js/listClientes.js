@@ -23,6 +23,6 @@ function respuestaDelCliente(json) {
     alert(json.mensaje);
   } else {
     alert(json.mensaje);
-    $("#listClientes").hide("normal");
+    location.reload((forceGet = true));
   }
 }

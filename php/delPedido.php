@@ -3,17 +3,14 @@ $servidor = "localhost";
 $basedatos = "bocadillos";
 $usuario = "root";
 $password = "";
-$direccion = $_POST['direccion'];
-$fecha = $_POST['fecha'];
-$cliente = $_POST['cliente'];
-$bocadillo = $_POST['bocadillo'];
+$id = $_POST['id'];
 $conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
-$sql = "INSERT INTO pedido (direccion, fecha, dniCliente, idBocadillo) VALUES ('$direccion', '$fecha', '$cliente', $bocadillo)";
+$sql = "DELETE FROM pedido WHERE id=" . $id;
 $resultado = mysqli_query($conexion, $sql);
 if ($resultado) {
      $respuesta["error"] = 0;
-     $respuesta["mensaje"] = "Pedido añadido";
+     $respuesta["mensaje"] = "Bocadillo eliminado";
 } else {
      $respuesta["error"] = 1;
      $respuesta["mensaje"] = "Error " . mysqli_error($conexion);

@@ -23,6 +23,6 @@ function respuestaDelIngrediente(json) {
     alert(json.mensaje);
   } else {
     alert(json.mensaje);
-    $("#listIngredientes").hide("normal");
+    location.reload((forceGet = true));
   }
 }

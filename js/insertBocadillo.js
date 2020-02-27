@@ -3,10 +3,10 @@ frmInsertBocadilloFrm.reset();
 obtenerIngredientes();
 
 function obtenerIngredientes() {
-  $.get("./php/getIngredientes.php", rellenarCheckboxes, "json");
+  $.get("./php/getIngredientes.php", rellenarSelect, "json");
 }
 
-function rellenarCheckboxes(json) {
+function rellenarSelect(json) {
   $("#frmInsertBocadilloIngredientes").html(json);
 }
 

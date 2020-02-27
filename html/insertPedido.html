@@ -12,7 +12,7 @@
       <label for="frmPedidoBocadillo" class="col-4 col-form-label"
         >Bocadillo:</label
       >
-      <select class="col-8" id="frmInsertPedidoBocadillos"></select>
+      <select class="col-8" id="frmInsertPedidoBocadillo"></select>
     </div>
     <div class="form-group row">
       <label for="frmPedidoCliente" class="col-4 col-form-label">Cliente</label>
@@ -42,6 +42,6 @@
 </div>
 <script>
   $(function() {
-    $("#frmInsertPedidoFecha").datepicker();
+    $("#frmInsertPedidoFecha").datepicker({ dateFormat: "yy-mm-dd" });
   });
 </script>
