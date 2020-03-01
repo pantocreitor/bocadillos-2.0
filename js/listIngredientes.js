@@ -1,14 +1,31 @@
 console.log("listIngredientesCargado");
-if (!$("#listIngredientes").is(":empty")) {
-  $("#listIngredientes").empty();
+limpiar();
+
+function limpiar() {
+  if (!$("#listIngredientes").is(":empty")) {
+    $("#listIngredientes").empty();
+  }
 }
+
 obtenerIngredientes();
 
 function obtenerIngredientes() {
   $.get("./php/listIngredientes.php", crearTablaIngredientes, "json");
 }
 
+document
+  .querySelector("#listIngredientesSearchButton")
+  .addEventListener("click", buscar);
+
+function buscar() {
+  param =
+    "nombre=" +
+    document.querySelector("#listIngredientesSearchName").value.trim();
+  $.get("./php/searchIngrediente.php", param, crearTablaIngredientes, "json");
+}
+
 function crearTablaIngredientes(json) {
+  limpiar();
   $("#listIngredientes").html(json);
 }
 

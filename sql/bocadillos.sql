@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-02-2020 a las 18:09:15
+-- Tiempo de generación: 01-03-2020 a las 17:45:12
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -33,7 +33,7 @@ USE `bocadillos`;
 DROP TABLE IF EXISTS `bocadillos`;
 CREATE TABLE `bocadillos` (
   `id` int(9) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
   `precio` int(3) NOT NULL,
   `idIngrediente` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -43,10 +43,14 @@ CREATE TABLE `bocadillos` (
 --
 
 INSERT INTO `bocadillos` (`id`, `nombre`, `precio`, `idIngrediente`) VALUES
-(1, 'Jamon', 1, 1),
-(2, 'Queso', 1, 2),
-(3, 'Pollo', 1, 3),
-(4, 'Chorizo', 1, 4);
+(1, 'Bocadillo de jamón', 1, 1),
+(2, 'Bocadillo de queso', 1, 2),
+(3, 'Serranito', 1, 3),
+(4, 'Bocadillo de chorizo', 1, 4),
+(8, 'Hamburguesa', 1, 11),
+(10, 'Perrito caliente', 1, 12),
+(11, 'Pepito de lomo', 1, 8),
+(12, 'Bocadillo de tortilla', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -68,7 +72,10 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`dni`, `nombre`, `telefono`, `direccion`) VALUES
 ('11222333R', 'Armando Bronca', 666777888, 'Calle Avenida'),
-('33222111G', 'Agapito Agapitez', 666555444, 'Avenida Calle');
+('33222111G', 'Agapito Agapitez', 666555444, 'Avenida Calle'),
+('55969111R', 'Personaje Ficticio', 66377744, 'Teatro de la esquina'),
+('55999111R', 'Manolo Manolez', 666000111, 'Avenida manolitez'),
+('66333888Y', 'Imanol Imanolitez', 666777222, 'Calle de los imanoles');
 
 -- --------------------------------------------------------
 
@@ -90,7 +97,13 @@ INSERT INTO `ingredientes` (`id`, `nombre`) VALUES
 (1, 'Jamon'),
 (2, 'Queso'),
 (3, 'Pollo'),
-(4, 'Chorizo');
+(4, 'Chorizo'),
+(7, 'Pavo'),
+(8, 'Lomo'),
+(9, 'Bacon'),
+(10, 'Tortilla'),
+(11, 'Hamburguesa'),
+(12, 'Salchichas');
 
 -- --------------------------------------------------------
 
@@ -115,7 +128,9 @@ INSERT INTO `pedido` (`id`, `direccion`, `fecha`, `dniCliente`, `idBocadillo`) V
 (1, 'Calle Avenida', '2020-02-26', '11222333R', 1),
 (2, 'Avenida Calle', '2020-02-27', '33222111G', 2),
 (3, 'Calle calle', '2020-02-26', '33222111G', 3),
-(4, 'Avenida avenida', '2020-02-24', '11222333R', 4);
+(4, 'Avenida avenida', '2020-02-24', '11222333R', 4),
+(8, 'Recogida en tienda', '2020-02-25', '55969111R', 12),
+(9, 'Cines Los Arcos', '2020-02-18', '11222333R', 10);
 
 --
 -- Índices para tablas volcadas
@@ -154,19 +169,19 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `bocadillos`
 --
 ALTER TABLE `bocadillos`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `ingredientes`
 --
 ALTER TABLE `ingredientes`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

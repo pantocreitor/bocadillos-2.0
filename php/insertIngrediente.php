@@ -4,7 +4,8 @@ $basedatos = "bocadillos";
 $usuario = "root";
 $password = "";
 $nombre = $_POST['nombre'];
-$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
+$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos)
+     or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
 $sql = "INSERT INTO ingredientes (nombre) VALUES ('" . $nombre . "')";
 $resultado = mysqli_query($conexion, $sql);

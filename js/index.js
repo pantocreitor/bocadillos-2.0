@@ -1,5 +1,3 @@
-// retomamos
-
 $(document).ready(function() {
   $("#insertBocadillo").click(function() {
     cargarInsertBocadillo();

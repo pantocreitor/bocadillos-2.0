@@ -4,7 +4,8 @@ $basedatos = "bocadillos";
 $usuario = "root";
 $password = "";
 $id = $_POST['id'];
-$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
+$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos)
+     or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
 $sql = "DELETE FROM pedido WHERE id=" . $id;
 $resultado = mysqli_query($conexion, $sql);

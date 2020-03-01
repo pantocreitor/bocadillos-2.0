@@ -3,24 +3,30 @@ $servidor  = "localhost";
 $basedatos = "bocadillos";
 $usuario   = "root";
 $password  = "";
+$nombre = $_GET["nombre"];
 $conexion = mysqli_connect($servidor, $usuario, $password, $basedatos)
-  or die(mysqli_error($conexion));
+     or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
 $tabla = '<table class="table table-borderless table-striped">
   <thead class="thead-light">
     <tr>
+      <th>ID</th>
       <th>Nombre</th>
+      <th>Precio</th>
       <th>Borrar</th>
     </tr>
   </thead>
   <tbody>';
-$sql = "SELECT * FROM ingredientes ORDER BY nombre";
+$sql = "SELECT id, nombre, precio FROM bocadillos WHERE nombre LIKE '%" .
+     $nombre . "%'";
 $resultados = mysqli_query($conexion, $sql);
 while ($fila = mysqli_fetch_array($resultados)) {
-  $tabla .= '<tr>
+     $tabla .= '<tr>
+     <td>' . $fila["id"] . '</td>
      <td>' . $fila["nombre"] . '</td>
-     <td> <button class="btn btn-danger" onclick="borrarIngrediente(' .
-    $fila["id"] . ')"></button></td></tr>';
+     <td>' . $fila["precio"] . '</td>
+     <td> <button class="btn btn-danger" onclick="borrarBocadillo(' .
+          $fila["id"] . ')"></button></td></tr>';
 }
 $tabla .= '</tbody></table>';
 echo json_encode($tabla);

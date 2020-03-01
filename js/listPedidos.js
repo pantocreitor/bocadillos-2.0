@@ -1,14 +1,32 @@
 console.log("listPedidosCargado");
-if (!$("#listPedidos").is(":empty")) {
-  $("#listPedidos").empty();
+
+limpiar();
+
+function limpiar() {
+  if (!$("#listPedidos").is(":empty")) {
+    $("#listPedidos").empty();
+  }
 }
+
 obtenerPedidos();
 
 function obtenerPedidos() {
   $.get("./php/listPedidos.php", crearTablaPedidos, "json");
 }
 
+document
+  .querySelector("#listPedidosSearchButton")
+  .addEventListener("click", buscar);
+
+function buscar() {
+  param =
+    "nombre=" +
+    document.querySelector("#listPedidosSearchCliente").value.trim();
+  $.get("./php/searchPedido.php", param, crearTablaPedidos, "json");
+}
+
 function crearTablaPedidos(json) {
+  limpiar();
   $("#listPedidos").html(json);
 }
 

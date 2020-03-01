@@ -1,14 +1,31 @@
 console.log("listBocadillosCargado");
-if (!$("#listBocadillos").is(":empty")) {
-  $("#listBocadillos").empty();
+limpiar();
+
+function limpiar() {
+  if (!$("#listBocadillos").is(":empty")) {
+    $("#listBocadillos").empty();
+  }
 }
+
 obtenerIngredientes();
 
 function obtenerIngredientes() {
   $.get("./php/listBocadillos.php", crearTablaBocadillos, "json");
 }
 
+document
+  .querySelector("#listBocadillosSearchButton")
+  .addEventListener("click", buscar);
+
+function buscar() {
+  param =
+    "nombre=" +
+    document.querySelector("#listBocadillosSearchName").value.trim();
+  $.get("./php/searchBocadillo.php", param, crearTablaBocadillos, "json");
+}
+
 function crearTablaBocadillos(json) {
+  limpiar();
   $("#listBocadillos").html(json);
 }
 

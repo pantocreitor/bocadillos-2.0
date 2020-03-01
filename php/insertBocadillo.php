@@ -6,9 +6,11 @@ $password = "";
 $nombre = $_POST['nombre'];
 $ingrediente = $_POST['ingrediente'];
 $precio = $_POST['precio'];
-$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos) or die(mysqli_error($conexion));
+$conexion = mysqli_connect($servidor, $usuario, $password, $basedatos)
+     or die(mysqli_error($conexion));
 mysqli_set_charset($conexion, "utf8");
-$sql = "INSERT INTO bocadillos(nombre, precio, idIngrediente) VALUES ('$nombre',$precio,$ingrediente)";
+$sql = "INSERT INTO bocadillos(nombre, precio, idIngrediente) 
+VALUES ('$nombre',$precio,$ingrediente)";
 $resultado = mysqli_query($conexion, $sql);
 if ($resultado) {
      $respuesta["error"] = 0;
