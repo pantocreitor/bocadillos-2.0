@@ -1,4 +1,4 @@
-# bocadillos-2.0
+# Bocadillos 2.0
 
 **Práctica de 2º Daw, asignatura Cliente.**
 
